@@ -9,11 +9,11 @@ Converting Mrindangam left and right into single audio file (mrindangam)
 Expecting Four stem output namely: Vocal, violin, mrindangam and others
 
 
-### Version 1
+## Version 1
 
 > The dataset is trained to extract stems: Mrindangam Left, Mrindangam Right, Vocal and Violin.
 
-##### Results:
+### Results:
 
 - With Bleeding (Actual Dataset)
 
@@ -24,11 +24,11 @@ SDR: -0.19096690404060424
 SDR:
 
 
-### Version 2
+## Version 2
 
 > The dataset is trained to extract stems: Mrindangam Left, Mrindangam Right, Vocal and Violin. This is with some major changes in the code in data loading.
 
-##### Results:
+### Results:
 
 - With Bleeding (Actual Dataset)
 
@@ -39,11 +39,11 @@ SDR:
 SDR:
 
 
-### Version 3
+## Version 3
 
 > The dataset is trained to extract stems: Mrindangam (left+right), Vocal, Violin and Others
 
-##### Results:
+### Results:
 
 - With Bleeding (Actual Dataset)
 
