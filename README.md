@@ -19,10 +19,6 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 
 SDR: -0.19096690404060424
 
-- Without Bleeding (Bleeding Removed Dataset)
-
-SDR:
-
 
 ## Version 2
 
@@ -34,14 +30,10 @@ SDR:
 
 SDR: 
 
-- Without Bleeding (Bleeding Removed Dataset)
-
-SDR:
-
 
 ## Version 3
 
-> The dataset is trained to extract stems: Mrindangam (left+right), Vocal, Violin and Others
+> The dataset is trained to extract stems: Mrindangam (left+right), Vocal(/s) and Violin
 
 ### Results:
 
