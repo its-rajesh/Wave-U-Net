@@ -1,6 +1,6 @@
 # WaveUnet Implementation for Saraga Dataset (Indian Carnatic Music)
 
-Actual Network: https://github.com/f90/Wave-U-Net-Pytorch. Have used the same network and rewritten to use the appropriate dataset.
+Actual Network: https://github.com/f90/Wave-U-Net-Pytorch. Have used this as baseline and restructured to use the appropriate dataset.
 
 Saraga Carnatic Dataset:
 
