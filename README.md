@@ -15,32 +15,23 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 
 ### Results:
 
-- With Bleeding (Actual Dataset: Leakage)
-
-SDR: -0.19096690404060424
+SDR: -0.19096690404060424 (Has Bleeding Effects)
 
 
 ## Version 2
 
-> The dataset is trained to extract stems: Mrindangam Left, Mrindangam Right, Vocal and Violin. This is with some major changes in the code in data loading.
+> The dataset is trained to extract Three stems: Mrindangam, Vocal and Violin. This is with some minor changes in the code in data loading. The mridangal left and right is added together. Where ever there is secondary vocal, it is added with primary vocal. Ghatam files are removed.
 
 ### Results:
 
-- With Bleeding (Actual Dataset)
-
-SDR: 
+SDR: (Has Bleeding Effects)
 
 
 ## Version 3
 
-> The dataset is trained to extract stems: Mrindangam (left+right), Vocal(/s) and Violin
+> The dataset is trained to extract stems: Mrindangam (left+right), Vocal(/s) and Violin, Bleeding of the sources is reduced considerably to achieve higher performance.
 
 ### Results:
 
-- With Bleeding (Actual Dataset)
+Metrics | With Bleed | Without Bleed |
 
-SDR: 
-
-- Without Bleeding (Bleeding Removed Dataset)
-
-SDR:
