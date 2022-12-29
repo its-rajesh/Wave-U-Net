@@ -15,7 +15,6 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 
 ### Results:
 
-SDR: -0.19096690404060424 (Has Bleeding Effects)
 | Metrics | With Bleeding Effects | 
 |------|-----|
 |SDR| __-0.19096690404060424__|
@@ -41,5 +40,5 @@ SDR: -0.19096690404060424 (Has Bleeding Effects)
 
 | Metrics | With Bleed | Without Bleed | 
 |------|-----|-----|
-|SDR|  |__0.00__ |
+|SDR|  | |
 
