@@ -36,6 +36,6 @@ SDR: (Has Bleeding Effects)
 Metrics | With Bleed | Without Bleed |
 
 | Metrics | With Bleed | Without Bleed | 
-|------|-----|-----|-----|
-|SDR| |____ |
+|------|-----|-----|
+|SDR| 0 |__0__ |
 
