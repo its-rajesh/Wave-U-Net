@@ -27,7 +27,7 @@ SDR: -0.19096690404060424 (Has Bleeding Effects)
 SDR: (Has Bleeding Effects)
 | Metrics | With Bleed | 
 |------|-----|
-|SDR|__pending__ |
+|SDR|__ __ |
 
 
 ## Version 3
