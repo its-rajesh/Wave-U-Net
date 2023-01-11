@@ -28,7 +28,7 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 
 | Metrics | With Bleeding Effects | 
 |------|-----|
-|SDR| |
+|SDR| __1.166956417870889__ |
 
 
 ## Version 3: 3 Sources (Leakage Removed)
