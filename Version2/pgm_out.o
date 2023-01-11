@@ -1,0 +1,701 @@
+Using valid convolutions with 97961 inputs and 88409 outputs
+move model to gpu
+model:  DataParallel(
+  (module): Waveunet(
+    (waveunets): ModuleDict(
+      (mridangam): Module(
+        (downsampling_blocks): ModuleList(
+          (0): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(32, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (1): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (2): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (3): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (4): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 1024, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(128, 1024, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+        )
+        (upsampling_blocks): ModuleList(
+          (0): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1024, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1024, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (1): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (2): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (3): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (4): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+          )
+        )
+        (bottlenecks): ModuleList(
+          (0): ConvLayer(
+            (filter): Conv1d(1024, 1024, kernel_size=(5,), stride=(1,))
+            (norm): GroupNorm(128, 1024, eps=1e-05, affine=True)
+          )
+        )
+        (output_conv): Conv1d(32, 1, kernel_size=(1,), stride=(1,))
+      )
+      (violin): Module(
+        (downsampling_blocks): ModuleList(
+          (0): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(32, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (1): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (2): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (3): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (4): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 1024, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(128, 1024, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+        )
+        (upsampling_blocks): ModuleList(
+          (0): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1024, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1024, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (1): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (2): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (3): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (4): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+          )
+        )
+        (bottlenecks): ModuleList(
+          (0): ConvLayer(
+            (filter): Conv1d(1024, 1024, kernel_size=(5,), stride=(1,))
+            (norm): GroupNorm(128, 1024, eps=1e-05, affine=True)
+          )
+        )
+        (output_conv): Conv1d(32, 1, kernel_size=(1,), stride=(1,))
+      )
+      (vocals): Module(
+        (downsampling_blocks): ModuleList(
+          (0): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(32, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (1): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (2): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (3): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+          (4): DownsamplingBlock(
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 1024, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(128, 1024, eps=1e-05, affine=True)
+              )
+            )
+            (downconv): Resample1d()
+          )
+        )
+        (upsampling_blocks): ModuleList(
+          (0): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1024, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(1024, 512, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(64, 512, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (1): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(512, 256, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(32, 256, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (2): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(256, 128, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(16, 128, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (3): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(128, 64, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(8, 64, eps=1e-05, affine=True)
+              )
+            )
+          )
+          (4): UpsamplingBlock(
+            (upconv): Resample1d()
+            (pre_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+            (post_shortcut_convs): ModuleList(
+              (0): ConvLayer(
+                (filter): Conv1d(64, 32, kernel_size=(5,), stride=(1,))
+                (norm): GroupNorm(4, 32, eps=1e-05, affine=True)
+              )
+            )
+          )
+        )
+        (bottlenecks): ModuleList(
+          (0): ConvLayer(
+            (filter): Conv1d(1024, 1024, kernel_size=(5,), stride=(1,))
+            (norm): GroupNorm(128, 1024, eps=1e-05, affine=True)
+          )
+        )
+        (output_conv): Conv1d(32, 1, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+)
+parameter count:  52610595
+Loading train set...
+Loading test set...
+Continuing training full model from checkpoint checkpoints/waveunet/checkpoint_80850
+TRAINING START
+Training one epoch from iteration 80850
+VALIDATION FINISHED: LOSS: 0.008265515114885904
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 88935
+VALIDATION FINISHED: LOSS: 0.008285424403050731
+Saving model...
+Training one epoch from iteration 97020
+VALIDATION FINISHED: LOSS: 0.008271575854803145
+Saving model...
+Training one epoch from iteration 105105
+VALIDATION FINISHED: LOSS: 0.008286324307494162
+Saving model...
+Training one epoch from iteration 113190
+VALIDATION FINISHED: LOSS: 0.008262937749117825
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 121275
+VALIDATION FINISHED: LOSS: 0.008279358681033158
+Saving model...
+Training one epoch from iteration 129360
+VALIDATION FINISHED: LOSS: 0.008233253299177255
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 137445
+VALIDATION FINISHED: LOSS: 0.00824532628387459
+Saving model...
+Training one epoch from iteration 145530
+VALIDATION FINISHED: LOSS: 0.008262861254128237
+Saving model...
+Training one epoch from iteration 153615
+VALIDATION FINISHED: LOSS: 0.008265289666397824
+Saving model...
+Training one epoch from iteration 161700
+VALIDATION FINISHED: LOSS: 0.00822324688048414
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 169785
+VALIDATION FINISHED: LOSS: 0.00818568408490916
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 177870
+VALIDATION FINISHED: LOSS: 0.008214309010133041
+Saving model...
+Training one epoch from iteration 185955
+VALIDATION FINISHED: LOSS: 0.00819967625178168
+Saving model...
+Training one epoch from iteration 194040
+VALIDATION FINISHED: LOSS: 0.00821166024947318
+Saving model...
+Training one epoch from iteration 202125
+VALIDATION FINISHED: LOSS: 0.008170562359306516
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 210210
+VALIDATION FINISHED: LOSS: 0.008142854075064359
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 218295
+VALIDATION FINISHED: LOSS: 0.008148838802382442
+Saving model...
+Training one epoch from iteration 226380
+VALIDATION FINISHED: LOSS: 0.008134787331051037
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 234465
+VALIDATION FINISHED: LOSS: 0.00814169569399784
+Saving model...
+Training one epoch from iteration 242550
+VALIDATION FINISHED: LOSS: 0.008180142987528592
+Saving model...
+Training one epoch from iteration 250635
+VALIDATION FINISHED: LOSS: 0.008102084436141197
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 258720
+VALIDATION FINISHED: LOSS: 0.008151706250112134
+Saving model...
+Training one epoch from iteration 266805
+VALIDATION FINISHED: LOSS: 0.008126922466495988
+Saving model...
+Training one epoch from iteration 274890
+VALIDATION FINISHED: LOSS: 0.008093124039750493
+MODEL IMPROVED ON VALIDATION SET!
+Saving model...
+Training one epoch from iteration 282975
+VALIDATION FINISHED: LOSS: 0.008099011262916823
+Saving model...
+Training one epoch from iteration 291060
+VALIDATION FINISHED: LOSS: 0.008119936527623092
+Saving model...
+Training one epoch from iteration 299145
+warning: audio amplitude out of range, auto clipped.
+VALIDATION FINISHED: LOSS: 0.00818803433901662
+Saving model...
+Training one epoch from iteration 307230
+VALIDATION FINISHED: LOSS: 0.008144202462689244
+Saving model...
+Training one epoch from iteration 315315
+VALIDATION FINISHED: LOSS: 0.008148154122436605
+Saving model...
+Training one epoch from iteration 323400
+VALIDATION FINISHED: LOSS: 0.00815369541275032
+Saving model...
+Training one epoch from iteration 331485
+VALIDATION FINISHED: LOSS: 0.008217693256252665
+Saving model...
+Training one epoch from iteration 339570
+VALIDATION FINISHED: LOSS: 0.008135341357062387
+Saving model...
+Training one epoch from iteration 347655
+VALIDATION FINISHED: LOSS: 0.00818460497450237
+Saving model...
+Training one epoch from iteration 355740
+VALIDATION FINISHED: LOSS: 0.008160196646873862
+Saving model...
+Training one epoch from iteration 363825
+VALIDATION FINISHED: LOSS: 0.008192462422044525
+Saving model...
+Training one epoch from iteration 371910
+VALIDATION FINISHED: LOSS: 0.008151059766212694
+Saving model...
+Training one epoch from iteration 379995
+VALIDATION FINISHED: LOSS: 0.008153288075178861
+Saving model...
+Training one epoch from iteration 388080
+VALIDATION FINISHED: LOSS: 0.008189511428512342
+Saving model...
+Training one epoch from iteration 396165
+VALIDATION FINISHED: LOSS: 0.008166151778088914
+Saving model...
+Training one epoch from iteration 404250
+VALIDATION FINISHED: LOSS: 0.00822961514247991
+Saving model...
+Training one epoch from iteration 412335
+VALIDATION FINISHED: LOSS: 0.00820654395463312
+Saving model...
+Training one epoch from iteration 420420
+VALIDATION FINISHED: LOSS: 0.008142127299979998
+Saving model...
+Training one epoch from iteration 428505
+VALIDATION FINISHED: LOSS: 0.008174412066049267
+Saving model...
+Training one epoch from iteration 436590
+VALIDATION FINISHED: LOSS: 0.00822058668102699
+Saving model...
+TESTING
+TEST FINISHED: LOSS: 0.00923530009742179
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SamiDayajuda/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SanthamulekaSowkyamuledu/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SarasamukhiSakala/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SarasudaNinneKori/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Seethamma/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ShankariShankuru/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SharanagathaVatsale/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SharanuJanakana/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Shloka/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ShlokaNamasteSarvalokaanam/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ShlokaSriRamachandraShritaParijata/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Shlokam-ShivahShaktyayukto/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Shlokham/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ShobilluSaptasvara/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ShriGuruguhasya/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ShriKamakshiShritajana/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SiddhiVinayakam/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SivaSivaSivaYenarada/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Sogasuga/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SriDundurgeSivaSamsaare/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SriGuruNaPalitosmi/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SriJalandara/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SriKantimatim/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SriVidhyaRajagopala/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Sudhaamayee/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/SundariNeeDivya/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/TamburiMitidava/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/TelisiRama/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThamaraiKangal/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThanaithilamKattrerumai/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThappiBratikipova/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThillanaHameerkalyani/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThillanaPahadi/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThillanaRageshri/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThillanaVasanta/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThiruveraganeSaveriVarnam/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/ThoomaniMadatthu/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Tillana/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/TolinenuJesina/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/TulasiBilva/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VaVaBrindavana/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VanajakshaNinneKori/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VanajakshaNinneNammiti/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/Vandalum/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VanduKetpaarIllayo/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VaraLeelaGanaLola/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VarashikiVahana/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VasudevaSutamDevam/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VelumMayilume/mixture.wav
+Evaluating /DATA1/rajeshr/project/Datasets/Saraga3stem/test/VinakayunnaDella/mixture.wav
+SDR: 1.166956417870889
