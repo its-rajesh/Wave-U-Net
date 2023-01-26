@@ -41,3 +41,16 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 | Metrics | With Bleed | Without Bleed | 
 |------|-----|-----|
 |SDR| __1.166956417870889__ | |
+
+
+### Standard MUSDB18HQ
+
+> MUSDB18HQ is internally artificially bleeded to evaluate the performance on the effeect on leakage. Source is maintained dominant and other sources is bleeded to it with a volume reduction of 20dB.
+
+### Results:
+
+
+| Metrics | With Bleed | Without Bleed | 
+|------|-----|-----|
+|SDR| __2.22__ | |
+
