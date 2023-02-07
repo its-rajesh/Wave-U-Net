@@ -45,7 +45,7 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 
 ## Standard MUSDB18HQ
 
-> MUSDB18HQ is internally artificially bleeded to evaluate the performance on the effect of leakage. Actual source is maintained dominant and other sources is bleeded to it with a volume reduction of 20dB. Trained on [PyTorch: Wave-U-Net](https://github.com/f90/Wave-U-Net-Pytorch) network.
+> MUSDB18HQ is internally artificially bleeded to evaluate the performance on the effect of leakage. Actual source is maintained dominant and other sources is bleeded to it with a volume reduction of 10dB. Trained on [PyTorch: Wave-U-Net](https://github.com/f90/Wave-U-Net-Pytorch) network.
 
 ### Results:
 
