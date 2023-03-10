@@ -50,7 +50,7 @@ Expecting Four stem output namely: Vocal, violin, mrindangam and others
 ### Results:
 
 
-| Metrics | With Bleed | Without Bleed | 
-|------|-----|-----|
-|SDR| __1.996833781153795__ | __2.309013108265547__ |
+| Metrics | Actual | With Bleed | After Bleed Removal | 
+|------|-----|-----|-----|
+|SDR| __2.309013108265547__ | __0.9656615837211856 | __2.309013108265547__ |
 
