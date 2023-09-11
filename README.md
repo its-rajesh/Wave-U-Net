@@ -1,12 +1,10 @@
 # WaveUnet Implementation for Saraga Dataset (Indian Carnatic Music)
 
-Actual Network: https://github.com/f90/Wave-U-Net-Pytorch. Have used this as a baseline and restructured it to use the appropriate dataset.
+Actual Network: https://github.com/f90/Wave-U-Net-Pytorch. We have used this as a baseline and restructured it to use the appropriate dataset.
 
 Saraga Carnatic Dataset:
 
-It has five stems: Mixed, Vocal, Violin, Mrindangam Right and Mrindangam Left.
-Converting Mridangam left and right into a single audio file (mridangam)
-Expecting Four stem outputs namely: Vocal, violin, mridangam and others
+It has five stems: Mixed, Vocal, Violin, Mrindangam right, and Mrindangam Left. Converting Mridangam left and right into a single audio file (mridangam) Expecting Four stem outputs, namely: Vocal, violin, mridangam and others
 
 
 ## Version 1: 4 Sources (Leakage)
